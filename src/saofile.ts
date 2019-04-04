@@ -4,8 +4,7 @@ const config: GeneratorConfig = {
   subGenerators: (
     [
       // @index('./generators/*', (pp, cc) => `['${pp.name}', '${pp.path}'],`)
-      ['h5', './generators/h5'],
-      ['weapp', './generators/weapp'],
+      ['mp', './generators/mp'],
       // @endindex
     ].map(
       ([name, generator]) => ({

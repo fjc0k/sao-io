@@ -1,6 +1,5 @@
-import * as vtils from 'vtils'
 import { GeneratorConfig } from 'sao'
-import { isNil } from 'vtils'
+import { isEmail, isNil } from 'vtils'
 
 const config: GeneratorConfig<{
   name: string,
@@ -10,9 +9,6 @@ const config: GeneratorConfig<{
   author: string,
   email: string,
 }> = {
-  templateData: {
-    vtils: vtils,
-  },
   prompts() {
     return [
       {
@@ -45,7 +41,7 @@ const config: GeneratorConfig<{
         name: 'email',
         message: '作者邮箱',
         default: this.gitUser.email,
-        validate: vtils.isEmail,
+        validate: isEmail,
       },
     ]
   },
@@ -57,10 +53,7 @@ const config: GeneratorConfig<{
       },
       {
         type: 'move',
-        patterns: {
-          '_gitignore': '.gitignore',
-          '_package.json': 'package.json',
-        },
+        patterns: require('./move.json'),
       },
       {
         type: 'modify',

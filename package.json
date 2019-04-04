@@ -3,18 +3,24 @@
   "version": "0.0.0",
   "description": "my extraordinary SAO generator",
   "repository": {
-    "url": "jay fong/sao-io",
+    "url": "https://github.com/fjc0k/sao-io",
     "type": "git"
   },
-  "author": "jay fong <fjc0kb@gmail.com> (github.com/fjc0k)",
+  "author": "Jay Fong <fjc0kb@gmail.com> (github.com/fjc0k)",
   "license": "MIT",
   "files": [
     "saofile.js",
     "generators"
   ],
+  "keywords": [
+    "sao-generator",
+    "sao",
+    "scaffolding"
+  ],
   "scripts": {
-    "build": "tsc",
-    "test": "ava"
+    "build": "tsc && ts-node src/scripts/processTemplates.ts",
+    "test": "jest",
+    "release": "standard-version -a && git push --follow-tags origin master && npm run build && npm publish"
   },
   "eslintConfig": {
     "root": true,
@@ -24,19 +30,40 @@
     "/saofile*",
     "/generators",
     "template",
-    "*.d.ts"
+    "*.d.ts",
+    "__snapshots__"
   ],
+  "jest": {
+    "transform": {
+      "^.+\\.ts$": "ts-jest"
+    },
+    "collectCoverageFrom": [
+      "<rootDir>/src/**/*.ts"
+    ],
+    "testRegex": "(/__tests__/.*|(\\.|/)(test|spec))\\.(jsx?|tsx?)$",
+    "moduleFileExtensions": [
+      "ts",
+      "js",
+      "json"
+    ]
+  },
   "devDependencies": {
     "@types/chalk": "^2.2.0",
     "@types/fs-extra": "^5.0.5",
     "@types/inquirer": "^6.0.0",
+    "@types/jest": "^24.0.11",
     "@types/node": "^11.13.0",
     "@types/ora": "^3.2.0",
-    "ava": "^0.25.0",
     "eslint": "^5.16.0",
     "eslint-config-io": "^0.5.0",
+    "fs-extra": "^7.0.1",
+    "globby": "^9.2.0",
     "inquirer": "^6.2.2",
+    "jest": "^24.7.1",
     "sao": "^1.0.0",
+    "standard-version": "^5.0.2",
+    "ts-jest": "^24.0.1",
+    "ts-node": "^8.0.3",
     "typescript": "^3.4.1"
   },
   "dependencies": {

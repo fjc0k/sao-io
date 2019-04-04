@@ -1,6 +1,6 @@
-# <%= name =>
+# <%= name %>
 
-<%= description =>
+<%= description %>
 
 ## 功能支持情况
 
