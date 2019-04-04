@@ -236,7 +236,7 @@ exports[`文件内容正确: package.json 1`] = `
   \\"name\\": \\"output\\",
   \\"version\\": \\"0.0.0\\",
   \\"description\\": \\"一个小程序项目。\\",
-  \\"author\\": \\"MOCK_NAME\\",
+  \\"author\\": \\"MOCK_NAME <mock@example.com>\\",
   \\"private\\": true,
   \\"scripts\\": {
     \\"dev:weapp\\": \\"wedevtools open && npm run build:weapp -- --watch\\",
@@ -364,7 +364,7 @@ exports[`文件内容正确: package.json 1`] = `
 exports[`文件内容正确: project.config.json 1`] = `
 "{
   \\"miniprogramRoot\\": \\"dist/weapp/\\",
-  \\"projectname\\": \\"demo\\",
+  \\"projectname\\": \\"output\\",
   \\"description\\": \\"一个小程序项目。\\",
   \\"appid\\": \\"wx15002fb034d4fb9a\\",
   \\"setting\\": {
