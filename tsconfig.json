@@ -8,7 +8,6 @@
     "removeComments": false,
     "esModuleInterop": true,
     "allowSyntheticDefaultImports": true,
-    "importHelpers": true,
     "outDir": ".",
     "newLine": "LF",
     "skipLibCheck": true,
