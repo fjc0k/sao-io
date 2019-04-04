@@ -31,6 +31,7 @@ const config: GeneratorConfig<{
       {
         name: 'appid',
         message: 'AppID',
+        default: 'wx15002fb034d4fb9a',
       },
       {
         name: 'author',
