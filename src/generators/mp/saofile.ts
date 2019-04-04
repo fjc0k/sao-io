@@ -58,7 +58,6 @@ const config: GeneratorConfig<{
       {
         type: 'move',
         patterns: {
-          '_gitattributes': '.gitattributes',
           '_gitignore': '.gitignore',
           '_package.json': 'package.json',
         },
