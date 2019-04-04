@@ -1,0 +1,34 @@
+{
+  "name": "sao-io",
+  "version": "0.0.0",
+  "description": "my extraordinary SAO generator",
+  "repository": {
+    "url": "jay fong/sao-io",
+    "type": "git"
+  },
+  "author": "jay fong <fjc0kb@gmail.com> (github.com/fjc0k)",
+  "license": "MIT",
+  "files": [
+    "saofile.js",
+    "template"
+  ],
+  "scripts": {
+    "test": "ava"
+  },
+  "eslintConfig": {
+    "root": true,
+    "extends": "io"
+  },
+  "eslintIgnore": [
+    "/saofile*",
+    "/generators"
+  ],
+  "devDependencies": {
+    "@types/node": "^11.13.0",
+    "ava": "^0.25.0",
+    "eslint": "^5.16.0",
+    "eslint-config-io": "^0.5.0",
+    "sao": "^1.0.0",
+    "typescript": "^3.4.1"
+  }
+}
