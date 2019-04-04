@@ -4,7 +4,7 @@
     "target": "es6",
     "module": "commonjs",
     "moduleResolution": "node",
-    "declaration": true,
+    "declaration": false,
     "removeComments": false,
     "esModuleInterop": true,
     "allowSyntheticDefaultImports": true,
@@ -15,8 +15,8 @@
     "lib": [
       "esnext",
     ],
-    "types": [
-      "node"
+    "typeRoots": [
+      "node_modules/@types"
     ]
   },
   "include": [

@@ -13,6 +13,7 @@
     "generators"
   ],
   "scripts": {
+    "build": "tsc",
     "test": "ava"
   },
   "eslintConfig": {
@@ -21,14 +22,24 @@
   },
   "eslintIgnore": [
     "/saofile*",
-    "/generators"
+    "/generators",
+    "template",
+    "*.d.ts"
   ],
   "devDependencies": {
+    "@types/chalk": "^2.2.0",
+    "@types/fs-extra": "^5.0.5",
+    "@types/inquirer": "^6.0.0",
     "@types/node": "^11.13.0",
+    "@types/ora": "^3.2.0",
     "ava": "^0.25.0",
     "eslint": "^5.16.0",
     "eslint-config-io": "^0.5.0",
+    "inquirer": "^6.2.2",
     "sao": "^1.0.0",
     "typescript": "^3.4.1"
+  },
+  "dependencies": {
+    "vtils": "^0.85.0"
   }
 }

@@ -1,0 +1,22 @@
+{
+  "compilerOptions": {
+    "strict": true,
+    "strictNullChecks": false,
+    "target": "esnext",
+    "module": "commonjs",
+    "removeComments": false,
+    "moduleResolution": "node",
+    "experimentalDecorators": true,
+    "allowSyntheticDefaultImports": true,
+    "outDir": "lib",
+    "jsx": "preserve",
+    "jsxFactory": "Taro.createElement",
+    "typeRoots": [
+      "node_modules/@types",
+      "global.d.ts",
+    ]
+  },
+  "exclude": [
+    "dist"
+  ]
+}
