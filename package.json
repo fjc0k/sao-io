@@ -10,7 +10,7 @@
   "license": "MIT",
   "files": [
     "saofile.js",
-    "template"
+    "generators"
   ],
   "scripts": {
     "test": "ava"
