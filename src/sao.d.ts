@@ -57,7 +57,7 @@ declare module 'sao' {
     /**
      * Use `npm` or `yarn` to install packages in output directory.
      */
-    npmInstall: (opts: {
+    npmInstall: (opts?: {
       /**
        * The packages to install, if omited, it will install packages in `package.json`.
        */

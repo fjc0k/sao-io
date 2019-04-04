@@ -1,5 +1,5 @@
 import { GeneratorConfig } from 'sao'
-import { isEmail, isNil } from 'vtils'
+import { isEmail } from 'vtils'
 
 const config: GeneratorConfig<{
   name: string,
@@ -46,7 +46,9 @@ const config: GeneratorConfig<{
       },
     ]
   },
+
   actions() {
+    const { answers } = this
     return [
       {
         type: 'add',
@@ -58,26 +60,48 @@ const config: GeneratorConfig<{
       },
       {
         type: 'modify',
-        files: ['package.json', 'project.config.json'],
+        files: 'package.json',
         handler: (
           data: {
             name: string,
             description: string,
             author: string,
+          },
+        ) => {
+          data.name = answers.name
+          data.description = answers.description
+          data.author = `${answers.author} <${answers.email}>`
+          return data
+        },
+      },
+      {
+        type: 'modify',
+        files: 'project.config.json',
+        handler: (
+          data: {
             projectname: string,
+            description: string,
             appid: string,
           },
         ) => {
-          (['name', 'description', 'author', 'projectname', 'appid'] as Array<keyof typeof data>)
-            .forEach(key => {
-              if (!isNil(data[key])) {
-                data[key] = (this.answers as any)[key] || data[key]
-              }
-            })
+          data.projectname = answers.name
+          data.description = answers.description
+          data.appid = answers.appid
           return data
         },
       },
     ]
+  },
+
+  async completed() {
+    this.gitInit()
+    await this.npmInstall({
+      packages: [
+        'mounted',
+        'vtils',
+      ],
+    })
+    this.showProjectTips()
   },
 }
 
