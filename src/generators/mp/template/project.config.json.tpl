@@ -3,7 +3,7 @@
 	"cloudfunctionRoot": "cloud/dist/",
 	"projectname": "demo",
 	"description": "demo",
-	"appid": "wxc04525023d96e313",
+	"appid": "wx15002fb034d4fb9a",
 	"setting": {
 		"urlCheck": false,
 		"es6": false,

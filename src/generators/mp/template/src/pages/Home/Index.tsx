@@ -20,6 +20,11 @@ import { XPage } from '../../components'
         <Button
           onClick={() => {
             this.props.example.increaseCounter()
+            Taro.cloud.init()
+            Taro.cloud.callFunction({
+              name: 'demo',
+              success: console.log,
+            })
           }}>
           {`counter =+ 1`}
         </Button>
