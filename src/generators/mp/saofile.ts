@@ -4,6 +4,7 @@ import { isEmail } from 'vtils'
 const config: GeneratorConfig<{
   name: string,
   description: string,
+  enableCloudFunction: boolean,
   appid: string,
   designWidth: number,
   author: string,
@@ -23,15 +24,21 @@ const config: GeneratorConfig<{
         default: `一个小程序项目。`,
       },
       {
-        name: 'designWidth',
-        message: 'UI设计稿尺寸',
-        type: 'list',
-        choices: ['375', '640', '750', '828'],
+        name: 'enableCloudFunction',
+        message: '是否使用云函数',
+        type: 'confirm',
+        default: false,
       },
       {
         name: 'appid',
         message: 'AppID',
         default: 'wx15002fb034d4fb9a',
+      },
+      {
+        name: 'designWidth',
+        message: 'UI设计稿尺寸',
+        type: 'list',
+        choices: ['375', '640', '750', '828'],
       },
       {
         name: 'author',
@@ -53,6 +60,9 @@ const config: GeneratorConfig<{
       {
         type: 'add',
         files: '**',
+        filters: {
+          'cloud/**/*': answers.enableCloudFunction,
+        },
       },
       {
         type: 'move',
@@ -82,11 +92,17 @@ const config: GeneratorConfig<{
             projectname: string,
             description: string,
             appid: string,
+            cloudfunctionRoot: string,
+            cloudfunctionTemplateRoot: string,
           },
         ) => {
           data.projectname = answers.name
           data.description = answers.description
           data.appid = answers.appid
+          if (!answers.enableCloudFunction) {
+            delete data.cloudfunctionRoot
+            delete data.cloudfunctionTemplateRoot
+          }
           return data
         },
       },
