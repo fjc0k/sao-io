@@ -2,6 +2,15 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+# [0.8.0](https://github.com/fjc0k/sao-io/compare/v0.7.0...v0.8.0) (2019-04-05)
+
+
+### Features
+
+* **mp:** 压缩云函数且不生成 sourcemap ([5959e5a](https://github.com/fjc0k/sao-io/commit/5959e5a))
+
+
+
 # [0.7.0](https://github.com/fjc0k/sao-io/compare/v0.6.0...v0.7.0) (2019-04-05)
 
 
