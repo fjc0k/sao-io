@@ -2,6 +2,15 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+# [0.7.0](https://github.com/fjc0k/sao-io/compare/v0.6.0...v0.7.0) (2019-04-05)
+
+
+### Features
+
+* **mp:** 更新 ([2ad760e](https://github.com/fjc0k/sao-io/commit/2ad760e))
+
+
+
 # [0.6.0](https://github.com/fjc0k/sao-io/compare/v0.5.0...v0.6.0) (2019-04-05)
 
 
