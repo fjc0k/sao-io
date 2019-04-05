@@ -3,3 +3,7 @@ node_modules
 *.log
 /saofile*
 /generators
+dist
+.temp
+.rn_temp
+*_cache
