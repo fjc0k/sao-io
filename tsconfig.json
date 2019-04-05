@@ -19,7 +19,8 @@
     ]
   },
   "include": [
-    "src"
+    "src",
+    "sao.d.ts"
   ],
   "exclude": [
     "node_modules",

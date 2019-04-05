@@ -1,6 +1,6 @@
 # sao-io
 
-> my extraordinary SAO generator
+> My extraordinary SAO generators.
 
 ## Usage
 
@@ -12,18 +12,12 @@ yarn global add sao
 npm i -g sao
 ```
 
-### From npm
+### Mini Program
 
 ```bash
-sao io my-project
-```
-
-### From git
-
-```bash
-sao jay fong/sao-io my-project
+sao io:mp my-project
 ```
 
 ## License
 
-MIT &copy; [jay fong](github.com/fjc0k)
+MIT &copy; [Jay Fong](https://github.com/fjc0k)

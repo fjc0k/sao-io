@@ -10,3 +10,4 @@
 - [x] MobX
 - [x] component.ts
 - [x] list
+- [ ] Cloud
