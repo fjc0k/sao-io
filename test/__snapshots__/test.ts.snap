@@ -61,6 +61,7 @@ exports[`文件内容正确: README.md 1`] = `
 - [x] MobX
 - [x] component.ts
 - [x] list
+- [ ] Cloud
 "
 `;
 
@@ -378,6 +379,8 @@ exports[`文件内容正确: project.config.json 1`] = `
   },
   \\"compileType\\": \\"miniprogram\\",
   \\"libVersion\\": \\"2.3.1\\",
+  \\"simulatorType\\": \\"wechat\\",
+  \\"simulatorPluginLibVersion\\": {},
   \\"condition\\": {}
 }"
 `;
