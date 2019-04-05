@@ -6648,9 +6648,14 @@ class Bundler {
           writeBundle: _async$1(function () {
             // 云函数专用 开始
             const functionFile = path.parse(assets.values().next().value.absolute)
-            fs.copyFileSync(
-              path.join(__dirname, '../package.json'),
-              path.join(functionFile.dir, 'package.json')
+            fs.outputJsonSync(
+              path.join(functionFile.dir, 'package.json'),
+              {
+                main: 'index.js',
+                dependencies: {
+                  'wx-server-sdk': 'latest'
+                }
+              }
             )
             // 云函数专用 结束
 

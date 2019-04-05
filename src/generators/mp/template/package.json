@@ -27,7 +27,8 @@
   },
   "eslintIgnore": [
     "dist",
-    "node_modules"
+    "node_modules",
+    "bili"
   ],
   "stylelint": {
     "extends": "stylelint-config-standard",

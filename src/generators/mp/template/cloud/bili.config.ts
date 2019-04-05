@@ -11,6 +11,8 @@ const config: Config = {
   plugins: {
     babel: false,
   },
+  bundleNodeModules: true,
+  externals: ['wx-server-sdk'],
 }
 
 export default config

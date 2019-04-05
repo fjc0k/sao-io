@@ -48,8 +48,12 @@ declare module 'sao' {
      */
     npmClient: 'npm' | 'yarn',
     fs: typeof fs,
-    spinner: (typeof ora)['default'],
+    spinner: ora.Ora,
     chalk: (typeof chalk)['default'],
+    logger: Record<
+      'debug' | 'warn' | 'error' | 'success' | 'tip' | 'info',
+      (...args: any[]) => void,
+    >,
     /**
      * Run git init synchonously in output directory.
      */
@@ -58,6 +62,7 @@ declare module 'sao' {
      * Use `npm` or `yarn` to install packages in output directory.
      */
     npmInstall: (opts?: {
+      cwd?: string,
       /**
        * The packages to install, if omited, it will install packages in `package.json`.
        */

@@ -1,3 +1,5 @@
+import path from 'path'
+import spawn from 'cross-spawn'
 import { GeneratorConfig } from 'sao'
 import { isEmail } from 'vtils'
 
@@ -119,6 +121,7 @@ const config: GeneratorConfig<{
   },
 
   async completed() {
+    const { answers } = this
     this.gitInit()
     await this.npmInstall({
       packages: [
@@ -126,6 +129,21 @@ const config: GeneratorConfig<{
         'vtils',
       ],
     })
+    if (answers.enableCloudFunction) {
+      const cloudDir = path.join(this.outDir, 'cloud')
+      await this.npmInstall({
+        cwd: cloudDir,
+        packages: [
+          'vtils',
+        ],
+      })
+      this.spinner.start('<云函数> npm run build')
+      spawn.sync('npm', ['run', 'build'], {
+        cwd: cloudDir,
+      })
+      this.spinner.stop()
+      this.logger.success('<云函数> 构建成功')
+    }
     this.showProjectTips()
   },
 }
