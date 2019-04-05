@@ -1,3 +1,3 @@
-export const main = async () => {
-  return 1223
+export const main = async ({ id = 533 }: { id: number } = {} as any) => {
+  return id
 }

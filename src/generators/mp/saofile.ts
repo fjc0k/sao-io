@@ -4,6 +4,7 @@ import { isEmail } from 'vtils'
 const config: GeneratorConfig<{
   name: string,
   description: string,
+  enableCloud: boolean,
   enableCloudFunction: boolean,
   appid: string,
   designWidth: number,
@@ -24,10 +25,17 @@ const config: GeneratorConfig<{
         default: `一个小程序项目。`,
       },
       {
+        name: 'enableCloud',
+        message: '是否使用云开发',
+        type: 'confirm',
+        default: false,
+      },
+      {
         name: 'enableCloudFunction',
         message: '是否使用云函数',
         type: 'confirm',
-        default: false,
+        default: true,
+        when: a => a.enableCloud,
       },
       {
         name: 'appid',
@@ -62,6 +70,7 @@ const config: GeneratorConfig<{
         files: '**',
         filters: {
           'cloud/**/*': answers.enableCloudFunction,
+          'src/services/invokeCloudFunction.ts': answers.enableCloudFunction,
         },
       },
       {

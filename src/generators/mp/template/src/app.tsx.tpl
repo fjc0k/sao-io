@@ -1,8 +1,9 @@
 import './app.scss'
 import '@tarojs/async-await'
 import Taro from '@tarojs/taro'
-
+<% if (enableCloud) { %>
 Taro.cloud.init()
+<% } -%>
 
 class App extends Taro.Component {
   config: Taro.Config = {
