@@ -4,9 +4,10 @@ import { Config } from 'bili'
 const config: Config = {
   input: globby.sync('./src/functions/*[!index].ts'),
   output: {
-    format: 'cjs',
+    format: 'cjs-min',
     dir: 'dist',
     fileName: '[name]/index[ext]',
+    sourceMap: false,
   },
   plugins: {
     babel: false,
