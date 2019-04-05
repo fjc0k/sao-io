@@ -13,10 +13,10 @@ import sao from 'sao'
     expect(stream.fileList).toMatchSnapshot()
   })
 
-  test('文件内容正确', async () => {
-    const stream = await (sao as any).mock({ generator } as any)
-    for (const filePath of stream.fileList) {
-      expect(await stream.readFile(filePath)).toMatchSnapshot(filePath)
-    }
-  })
+  // test('文件内容正确', async () => {
+  //   const stream = await (sao as any).mock({ generator } as any)
+  //   for (const filePath of stream.fileList) {
+  //     expect(await stream.readFile(filePath)).toMatchSnapshot(filePath)
+  //   }
+  // })
 })
