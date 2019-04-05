@@ -17,8 +17,18 @@ files.forEach(file => {
 
   let targetFileName = pp.base
 
+  if (targetFileName.endsWith('.tpl')) {
+    if (files.includes(path.join(pp.dir, targetFileName.slice(0, -4)))) {
+      targetFileName = targetFileName.slice(0, -4)
+    }
+  } else {
+    if (files.includes(path.join(pp.dir, `${targetFileName}.tpl`))) {
+      file = path.join(pp.dir, `${targetFileName}.tpl`)
+    }
+  }
+
   if (targetFileName.charAt(0) === '.' || targetFileName === 'package.json') {
-    targetFileName = `_${targetFileName}`
+    targetFileName = `${targetFileName}.tpl`
     const generator = file.replace(/\\/g, '/').match(/generators\/(.+?)\//)![1]
     if (!moveMapByGenerator[generator]) {
       moveMapByGenerator[generator] = {}

@@ -1,5 +1,5 @@
 // 设计稿尺寸
-$designWidth: 375;
+$designWidth: <%= designWidth %>;
 
 // 页面背景色
 $backgroundColor: #E8E8E8;
