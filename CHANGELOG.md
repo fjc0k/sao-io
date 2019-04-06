@@ -2,6 +2,22 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+# [0.9.0](https://github.com/fjc0k/sao-io/compare/v0.8.0...v0.9.0) (2019-04-06)
+
+
+### Bug Fixes
+
+* **generator:** should disable transform ([220bf5d](https://github.com/fjc0k/sao-io/commit/220bf5d))
+
+
+### Features
+
+* add basic ([3331995](https://github.com/fjc0k/sao-io/commit/3331995))
+* update ([1853f15](https://github.com/fjc0k/sao-io/commit/1853f15))
+* 添加 generator ([2688cfc](https://github.com/fjc0k/sao-io/commit/2688cfc))
+
+
+
 # [0.8.0](https://github.com/fjc0k/sao-io/compare/v0.7.0...v0.8.0) (2019-04-05)
 
 
