@@ -1,31 +1,24 @@
 {
   "compilerOptions": {
-    "baseUrl": ".",
     "strict": true,
     "target": "esnext",
     "module": "commonjs",
-    "moduleResolution": "node",
-    "declaration": false,
+    "declaration": true,
     "removeComments": false,
+    "moduleResolution": "node",
+    "experimentalDecorators": true,
     "esModuleInterop": true,
     "allowSyntheticDefaultImports": true,
-    "outDir": ".",
-    "newLine": "LF",
+    "outDir": "lib",
     "skipLibCheck": true,
-    "lib": [
-      "esnext",
-    ],
+    "newLine": "LF",
     "typeRoots": [
-      "node_modules/@types",
-      "sao.d.ts"
+      "node_modules/@types"
     ]
   },
-  "include": [
-    "src"
-  ],
   "exclude": [
     "node_modules",
-    "**/template",
-    "src/scripts"
+    "lib",
+    "dist"
   ]
 }

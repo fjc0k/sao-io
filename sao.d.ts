@@ -9,7 +9,7 @@ declare module 'sao' {
   }
 
   export interface Prompt<T extends Answers = Answers> extends Question<T> {
-    name: keyof T,
+    name: Extract<keyof T, string>,
     type?: 'input' | 'number' | 'confirm' | 'list' | 'rawlist' | 'expand' | 'checkbox' | 'password' | 'editor',
     /**
      * This is a property only for SAO, it is used to store user inputs so that SAO can use stored value as default value the next time. Note that different version of a generator stores the inputs in different places.
@@ -52,7 +52,7 @@ declare module 'sao' {
     chalk: (typeof chalk)['default'],
     logger: Record<
       'debug' | 'warn' | 'error' | 'success' | 'tip' | 'info',
-      (...args: any[]) => void,
+      (...args: any[]) => void
     >,
     /**
      * Run git init synchonously in output directory.
@@ -172,7 +172,7 @@ declare module 'sao' {
        *
        * Otherwise you will recieve raw string.
        */
-      handler: (data: any, filePath: string) => Data,
+      handler: <Data = any>(data: Data, filePath: string) => Data,
     } | {
       /**
        * Move files in target directory.
