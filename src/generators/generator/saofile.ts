@@ -6,6 +6,7 @@ const config: GeneratorConfig = {
       {
         type: 'add',
         files: '**',
+        transform: false,
       },
       {
         type: 'move',
