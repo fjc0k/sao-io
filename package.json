@@ -18,7 +18,7 @@
     "scaffolding"
   ],
   "scripts": {
-    "build": "tsc && ts-node src/scripts/processTemplates.ts",
+    "build": "cleandir ./generators && tsc && ts-node scripts/processTemplates.ts",
     "test": "jest",
     "release": "standard-version -a && git push --follow-tags origin master && npm run build && npm publish"
   },
@@ -55,6 +55,7 @@
     "@types/jest": "^24.0.11",
     "@types/node": "^11.13.0",
     "@types/ora": "^3.2.0",
+    "clean-dir": "^1.0.3",
     "eslint": "^5.16.0",
     "eslint-config-io": "^0.5.0",
     "fs-extra": "^7.0.1",

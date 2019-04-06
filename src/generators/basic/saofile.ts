@@ -4,20 +4,20 @@ import { GeneratorConfig } from 'sao'
 
 const config: GeneratorConfig<{
   name: string,
+  description: string,
+  enableCloud: boolean,
+  enableCloudFunction: boolean,
+  appid: string,
+  designWidth: number,
+  author: string,
+  email: string,
 }> = {
-  prompts() {
-    return [
-      {
-      }
-    ]
-  },
-
   actions() {
     const { answers } = this
     return [
       {
         type: 'add',
-        files: '**'
+        files: '**',
       },
       {
         type: 'move',

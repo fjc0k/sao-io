@@ -172,7 +172,7 @@ declare module 'sao' {
        *
        * Otherwise you will recieve raw string.
        */
-      handler: <Data = any>(data: Data, filePath: string) => Data,
+      handler: (data: any, filePath: string) => any,
     } | {
       /**
        * Move files in target directory.
