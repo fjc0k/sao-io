@@ -35,9 +35,12 @@
     ]
   },
   "lint-staged": {
-    "*.{js,jsx}": [
-      "eslint --fix src/",
-      "stylelint --fix src/",
+    "*.{js,jsx,ts,tsx}": [
+      "eslint --fix",
+      "git add"
+    ],
+    "*.scss": [
+      "stylelint --fix",
       "git add"
     ]
   },

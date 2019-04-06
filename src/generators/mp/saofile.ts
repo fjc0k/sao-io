@@ -129,6 +129,14 @@ const config: GeneratorConfig<{
         'vtils',
       ],
     })
+    await this.npmInstall({
+      packages: [
+        'eslint-config-io',
+        'stylelint-config-io',
+        'typescript',
+      ],
+      saveDev: true,
+    })
     if (answers.enableCloudFunction) {
       const cloudDir = path.join(this.outDir, 'cloud')
       await this.npmInstall({
