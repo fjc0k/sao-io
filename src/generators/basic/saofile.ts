@@ -1,23 +1,62 @@
-import path from 'path'
-import spawn from 'cross-spawn'
 import { GeneratorConfig } from 'sao'
+import { isEmail, isUrl } from 'vtils'
 
 const config: GeneratorConfig<{
   name: string,
   description: string,
-  enableCloud: boolean,
-  enableCloudFunction: boolean,
-  appid: string,
-  designWidth: number,
+  hasMITLicense: boolean,
   author: string,
   email: string,
+  homePage: string,
 }> = {
+  prompts() {
+    return [
+      {
+        name: 'name',
+        message: '项目名称',
+        default: this.outFolder,
+        validate: v => /^(?:@[a-z0-9-~][a-z0-9-._~]*\/)?[a-z0-9-~][a-z0-9-._~]*$/.test(v),
+      },
+      {
+        name: 'description',
+        message: '项目描述',
+        default: `A project.`,
+      },
+      {
+        name: 'hasMITLicense',
+        message: 'License & MIT',
+        type: 'confirm',
+        default: false,
+      },
+      {
+        name: 'author',
+        message: '作者',
+        default: this.gitUser.name,
+      },
+      {
+        name: 'email',
+        message: '作者邮箱',
+        default: this.gitUser.email,
+        validate: isEmail,
+      },
+      {
+        name: 'homePage',
+        message: '作者主页',
+        default: `https://github.com/${this.gitUser.username}`,
+        validate: isUrl,
+      },
+    ]
+  },
+
   actions() {
     const { answers } = this
     return [
       {
         type: 'add',
         files: '**',
+        filters: {
+          LICENSE: answers.hasMITLicense,
+        },
       },
       {
         type: 'move',
@@ -30,33 +69,19 @@ const config: GeneratorConfig<{
           data: {
             name: string,
             description: string,
-            author: string,
+            license: string,
+            author: Record<string, string>,
           },
         ) => {
           data.name = answers.name
           data.description = answers.description
-          data.author = `${answers.author} <${answers.email}>`
-          return data
-        },
-      },
-      {
-        type: 'modify',
-        files: 'project.config.json',
-        handler: (
-          data: {
-            projectname: string,
-            description: string,
-            appid: string,
-            cloudfunctionRoot: string,
-            cloudfunctionTemplateRoot: string,
-          },
-        ) => {
-          data.projectname = answers.name
-          data.description = answers.description
-          data.appid = answers.appid
-          if (!answers.enableCloudFunction) {
-            delete data.cloudfunctionRoot
-            delete data.cloudfunctionTemplateRoot
+          data.author = {
+            name: answers.author,
+            email: answers.email,
+            url: answers.homePage,
+          }
+          if (!answers.hasMITLicense) {
+            delete data.license
           }
           return data
         },
@@ -65,29 +90,20 @@ const config: GeneratorConfig<{
   },
 
   async completed() {
-    const { answers } = this
     this.gitInit()
     await this.npmInstall({
       packages: [
-        'mounted',
         'vtils',
       ],
     })
-    if (answers.enableCloudFunction) {
-      const cloudDir = path.join(this.outDir, 'cloud')
-      await this.npmInstall({
-        cwd: cloudDir,
-        packages: [
-          'vtils',
-        ],
-      })
-      this.spinner.start('<云函数> npm run build')
-      spawn.sync('npm', ['run', 'build'], {
-        cwd: cloudDir,
-      })
-      this.spinner.stop()
-      this.logger.success('<云函数> 构建成功')
-    }
+    await this.npmInstall({
+      packages: [
+        'eslint-config-io',
+        'stylelint-config-io',
+        'typescript',
+      ],
+      saveDev: true,
+    })
     this.showProjectTips()
   },
 }
