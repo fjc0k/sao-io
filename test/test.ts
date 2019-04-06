@@ -3,6 +3,8 @@ import sao from 'sao'
 
 [
   // @index('../src/generators/*', (pp, cc) => `'${pp.name}',`)
+  'basic',
+  'generator',
   'mp',
   // @endindex
 ].forEach(generatorName => {
@@ -12,11 +14,4 @@ import sao from 'sao'
     const stream = await (sao as any).mock({ generator } as any)
     expect(stream.fileList).toMatchSnapshot()
   })
-
-  // test('文件内容正确', async () => {
-  //   const stream = await (sao as any).mock({ generator } as any)
-  //   for (const filePath of stream.fileList) {
-  //     expect(await stream.readFile(filePath)).toMatchSnapshot(filePath)
-  //   }
-  // })
 })

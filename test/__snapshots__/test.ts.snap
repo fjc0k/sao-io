@@ -6,6 +6,37 @@ Array [
   ".gitattributes",
   ".gitignore",
   "README.md",
+  "package.json",
+  "src/example.ts",
+  "tests/test.ts",
+  "tsconfig.json",
+  "yarn.lock",
+]
+`;
+
+exports[`文件列表正确 2`] = `
+Array [
+  "move.json",
+  "saofile.ts",
+  "template/.editorconfig",
+  "template/.gitattributes",
+  "template/.gitignore",
+  "template/LICENSE",
+  "template/README.md",
+  "template/package.json",
+  "template/src/example.ts",
+  "template/tests/test.ts",
+  "template/tsconfig.json",
+  "template/yarn.lock",
+]
+`;
+
+exports[`文件列表正确 3`] = `
+Array [
+  ".editorconfig",
+  ".gitattributes",
+  ".gitignore",
+  "README.md",
   "config/dev.js",
   "config/index.js",
   "config/prod.js",
