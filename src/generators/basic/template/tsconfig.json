@@ -13,7 +13,8 @@
     "skipLibCheck": true,
     "newLine": "LF",
     "typeRoots": [
-      "node_modules/@types"
+      "node_modules/@types",
+      "global.d.ts"
     ]
   },
   "exclude": [
