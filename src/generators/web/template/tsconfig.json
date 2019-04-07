@@ -1,9 +1,9 @@
 {
   "compilerOptions": {
     "strict": true,
+    "strictNullChecks": false,
     "target": "esnext",
     "module": "commonjs",
-    "declaration": true,
     "removeComments": false,
     "moduleResolution": "node",
     "experimentalDecorators": true,
@@ -12,8 +12,14 @@
     "outDir": "lib",
     "skipLibCheck": true,
     "newLine": "LF",
+    "jsx": "preserve",
+    "lib": [
+      "dom",
+      "esnext"
+    ],
     "typeRoots": [
-      "node_modules/@types"
+      "node_modules/@types",
+      "global.d.ts"
     ]
   },
   "exclude": [
