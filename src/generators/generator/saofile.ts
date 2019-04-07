@@ -1,3 +1,4 @@
+import path from 'path'
 import { GeneratorConfig } from 'sao'
 
 const config: GeneratorConfig = {
@@ -16,6 +17,9 @@ const config: GeneratorConfig = {
   },
 
   async completed() {
+    await this.npmInstall({
+      cwd: path.join(this.outDir, 'template'),
+    })
     this.showProjectTips()
   },
 }
