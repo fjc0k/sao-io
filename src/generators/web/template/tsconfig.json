@@ -2,6 +2,7 @@
   "compilerOptions": {
     "strict": true,
     "strictNullChecks": false,
+    "importHelpers": true,
     "target": "esnext",
     "module": "commonjs",
     "removeComments": false,
@@ -12,7 +13,7 @@
     "outDir": "lib",
     "skipLibCheck": true,
     "newLine": "LF",
-    "jsx": "preserve",
+    "jsx": "react",
     "lib": [
       "dom",
       "esnext"

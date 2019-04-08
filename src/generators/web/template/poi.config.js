@@ -1,11 +1,23 @@
 module.exports = {
   entry: './src/App.tsx',
   output: {
-    publicUrl: '.',
+    publicUrl: './',
     html: {
       title: '',
     },
   },
+  plugins: [
+    {
+      resolve: '@poi/plugin-typescript',
+      options: {
+        babel: false,
+        lintOnSave: false,
+        loaderOptions: {
+          transpileOnly: true,
+        },
+      },
+    },
+  ],
   chainWebpack: config => {
     config.module
       .rule('media')
