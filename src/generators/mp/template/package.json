@@ -31,7 +31,12 @@
     "bili"
   ],
   "stylelint": {
-    "extends": "stylelint-config-io"
+    "extends": "stylelint-config-io",
+    "ignoreFiles": [
+      "**/node_modules/**/*",
+      "**/*.tsx",
+      "**/*.ts"
+    ]
   },
   "commitlint": {
     "extends": [
