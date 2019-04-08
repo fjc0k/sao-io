@@ -4,7 +4,7 @@ import { isEmail, isUrl } from 'vtils'
 const config: GeneratorConfig<{
   name: string,
   description: string,
-  hasMITLicense: boolean,
+  type: 'pc' | 'mobile' | 'wechat',
   author: string,
   email: string,
   homePage: string,
@@ -23,10 +23,11 @@ const config: GeneratorConfig<{
         default: `A project.`,
       },
       {
-        name: 'hasMITLicense',
-        message: 'License & MIT',
-        type: 'confirm',
-        default: false,
+        name: 'type',
+        message: '项目类型',
+        type: 'list',
+        choices: ['pc', 'mobile', 'wechat'],
+        default: 'wechat',
       },
       {
         name: 'author',
@@ -54,13 +55,22 @@ const config: GeneratorConfig<{
       {
         type: 'add',
         files: '**',
+        transformExclude: [
+          'public/index*.html',
+        ],
         filters: {
-          LICENSE: answers.hasMITLicense,
+          'public/index.html': false,
+          'public/index.pc.html': answers.type === 'pc',
+          'public/index.mobile.html': answers.type === 'mobile',
+          'public/index.wechat.html': answers.type === 'wechat',
         },
       },
       {
         type: 'move',
-        patterns: require('./move.json'),
+        patterns: {
+          ...require('./move.json'),
+          'public/index.*.html': 'public/index.html',
+        },
       },
       {
         type: 'modify',
@@ -69,8 +79,13 @@ const config: GeneratorConfig<{
           data: {
             name: string,
             description: string,
-            license: string,
             author: Record<string, string>,
+            browserslist: any,
+            postcss: {
+              plugins: {
+                'postcss-pxtorem': any,
+              },
+            },
           },
         ) => {
           data.name = answers.name
@@ -80,8 +95,12 @@ const config: GeneratorConfig<{
             email: answers.email,
             url: answers.homePage,
           }
-          if (!answers.hasMITLicense) {
-            delete data.license
+          if (answers.type === 'pc') {
+            data.browserslist = [
+              'ie > 10',
+              'last 2 versions',
+            ]
+            delete data.postcss.plugins['postcss-pxtorem']
           }
           return data
         },

@@ -8,3 +8,4 @@ dist
 .rn_temp
 *_cache
 demo
+coverage
