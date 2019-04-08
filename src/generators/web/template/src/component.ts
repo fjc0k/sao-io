@@ -2,7 +2,7 @@ import React from 'react'
 import { castArray, mapValues, Omit, pick, Validator, ValidatorRule } from 'vtils'
 import { isFunction } from 'vtils'
 import { ListContainer } from './services'
-import { PageName, Pages } from './pages'
+import { PageName, Pages, pageUrls } from './pages'
 import { StoreName, stores, Stores } from './store'
 
 type PartialBy<T, K extends keyof T> = Omit<T, K> & Partial<Pick<T, K>>
@@ -74,7 +74,7 @@ const component = <
   return class Component<
     ExtraProps extends Record<string, any> = {},
     ExtraState extends Record<string, any> = {}
-  > extends React.PureComponent<
+  > extends React.Component<
     Overwrite<PP, ExtraProps>,
     Overwrite<SS, ExtraState>
   > {
@@ -124,10 +124,10 @@ const component = <
       ) as any
       this.$router = {
         push: (pageName, params) => {
-          this.props.history.push(pageName, params)
+          this.props.history.push(pageUrls[pageName], params)
         },
         replace: (pageName, params) => {
-          this.props.history.replace(pageName, params)
+          this.props.history.replace(pageUrls[pageName], params)
         },
         back: () => {
           this.props.history.goBack()

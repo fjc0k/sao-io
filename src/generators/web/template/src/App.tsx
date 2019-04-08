@@ -32,7 +32,7 @@ function App() {
               exact={true}
               path={pageUrls[pageName]}
               component={pages[pageName]}
-              when='always'
+              when='back'
             />
           )})}
       </ScrollToTop>

@@ -9,10 +9,13 @@ import { observer } from 'mobx-react'
 }) {
   render() {
     return (
-      <div className={_.page} onClick={() => {
-        this.props.example.increaseCounter()
-      }}>
-        {'inject:'}{this.props.example.counter}
+      <div>
+        <div className={_.page} onClick={() => {
+          this.props.example.increaseCounter()
+        }}>
+          {'inject:'}{this.props.example.counter}
+        </div>
+        <button onClick={() => this.$router.push('HomeTest')}>go to test</button>
       </div>
     )
   }
