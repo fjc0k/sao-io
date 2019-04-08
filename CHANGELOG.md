@@ -2,6 +2,15 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [0.10.1](https://github.com/fjc0k/sao-io/compare/v0.10.0...v0.10.1) (2019-04-08)
+
+
+### Bug Fixes
+
+* export web ([ed1ce34](https://github.com/fjc0k/sao-io/commit/ed1ce34))
+
+
+
 # [0.10.0](https://github.com/fjc0k/sao-io/compare/v0.9.0...v0.10.0) (2019-04-08)
 
 
