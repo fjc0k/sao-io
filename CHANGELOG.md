@@ -2,6 +2,18 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+# [0.10.0](https://github.com/fjc0k/sao-io/compare/v0.9.0...v0.10.0) (2019-04-08)
+
+
+### Features
+
+* add web ([ce75e98](https://github.com/fjc0k/sao-io/commit/ce75e98))
+* **basic:** add global.d.ts ([a5f5084](https://github.com/fjc0k/sao-io/commit/a5f5084))
+* **web:** ts 问题解决 ([62611cb](https://github.com/fjc0k/sao-io/commit/62611cb))
+* 初始化 web ([5318f3c](https://github.com/fjc0k/sao-io/commit/5318f3c))
+
+
+
 # [0.9.0](https://github.com/fjc0k/sao-io/compare/v0.8.0...v0.9.0) (2019-04-06)
 
 
