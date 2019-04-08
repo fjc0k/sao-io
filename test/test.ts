@@ -6,6 +6,7 @@ import sao from 'sao'
   'basic',
   'generator',
   'mp',
+  'web',
   // @endindex
 ].forEach(generatorName => {
   const generator = path.join(__dirname, '../generators', generatorName)

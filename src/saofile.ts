@@ -7,6 +7,7 @@ const config: GeneratorConfig = {
       ['basic', './generators/basic'],
       ['generator', './generators/generator'],
       ['mp', './generators/mp'],
+      ['web', './generators/web'],
       // @endindex
     ].map(
       ([name, generator]) => ({
