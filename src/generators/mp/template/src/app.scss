@@ -1,2 +1,6 @@
 @import './settings.scss';
 @import '../node_modules/mounted/src/styles/components.scss';
+
+page {
+  line-height: 1; // 重置行高
+}
