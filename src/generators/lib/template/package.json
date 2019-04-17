@@ -1,0 +1,99 @@
+{
+  "name": "demo",
+  "version": "0.0.0",
+  "description": "demo",
+  "main": "index.js",
+  "author": {
+    "name": "demo",
+    "email": "demo@demo.demo",
+    "url": "https://demo.demo"
+  },
+  "license": "MIT",
+  "homepage": "https://demo.demo",
+  "sideEffects": false,
+  "repository": {
+    "type": "git",
+    "url": "https://demo.demo"
+  },
+  "bugs": {
+    "url": "https://demo.demo"
+  },
+  "keywords": [
+    "demo"
+  ],
+  "files": [
+    "lib"
+  ],
+  "scripts": {
+    "build": "bili",
+    "lint:es": "eslint --fix src/",
+    "lint:style": "stylelint --fix src/",
+    "test": "jest",
+    "test:cov": "jest --coverage",
+    "release": "standard-version --commit-all --no-verify && git push --follow-tags origin master"
+  },
+  "eslintConfig": {
+    "root": true,
+    "extends": "io"
+  },
+  "eslintIgnore": [
+    "lib",
+    "dist",
+    "node_modules",
+    "__snapshots__"
+  ],
+  "commitlint": {
+    "extends": [
+      "io"
+    ]
+  },
+  "lint-staged": {
+    "*.{js,jsx,ts,tsx}": [
+      "eslint --fix",
+      "git add"
+    ]
+  },
+  "husky": {
+    "hooks": {
+      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS",
+      "pre-commit": "lint-staged"
+    }
+  },
+  "jest": {
+    "transform": {
+      "^.+\\.tsx?$": "ts-jest"
+    },
+    "collectCoverageFrom": [
+      "<rootDir>/src/**/*.{ts|tsx}"
+    ],
+    "testRegex": "(/__tests__/.*|(\\.|/)(test|spec))\\.(jsx?|tsx?)$",
+    "moduleFileExtensions": [
+      "ts",
+      "tsx",
+      "js",
+      "jsx",
+      "json"
+    ]
+  },
+  "dependencies": {
+    "vtils": "^0.85.0"
+  },
+  "devDependencies": {
+    "@commitlint/cli": "^7.5.2",
+    "@types/jest": "^24.0.11",
+    "@types/node": "^11.11.3",
+    "bili": "^4.7.3",
+    "codecov": "^3.3.0",
+    "commitlint-config-io": "^0.3.0",
+    "eslint": "^5.15.0",
+    "eslint-config-io": "^0.5.0",
+    "husky": "^1.3.1",
+    "jest": "^24.7.1",
+    "lint-staged": "^8.1.5",
+    "rollup-plugin-typescript2": "^0.20.1",
+    "standard-version": "^4.4.0",
+    "ts-jest": "^24.0.2",
+    "ts-node": "^8.0.3",
+    "typescript": "^3.4.1"
+  }
+}
