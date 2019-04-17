@@ -131,7 +131,7 @@ const config: GeneratorConfig<{
     })
     await this.npmInstall({
       packages: [
-        'conventional-changelog-lint-config-io',
+        'commitlint-config-io',
         'eslint-config-io',
         'stylelint-config-io',
         'typescript',
