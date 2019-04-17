@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+# [0.12.0](https://github.com/fjc0k/sao-io/compare/v0.11.0...v0.12.0) (2019-04-17)
+
+
+### Features
+
+* 引入 conventional-changelog-lint-config-io ([34dca5c](https://github.com/fjc0k/sao-io/commit/34dca5c))
+* **mp:** 重置行高 ([93cbd92](https://github.com/fjc0k/sao-io/commit/93cbd92))
+
+
+
 # [0.11.0](https://github.com/fjc0k/sao-io/compare/v0.10.1...v0.11.0) (2019-04-08)
 
 
