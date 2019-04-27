@@ -5,6 +5,8 @@
   "author": "demo",
   "private": true,
   "scripts": {
+    "lint:es": "eslint --fix src/",
+    "lint:style": "stylelint --fix src/**/*.scss",
     "dev:weapp": "wedevtools open && npm run build:weapp -- --watch",
     "dev:swan": "npm run build:swan -- --watch",
     "dev:alipay": "npm run build:alipay -- --watch",

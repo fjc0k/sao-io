@@ -27,7 +27,7 @@
   "scripts": {
     "build": "bili",
     "lint:es": "eslint --fix src/",
-    "lint:style": "stylelint --fix src/",
+    "lint:style": "stylelint --fix src/**/*.scss",
     "test": "jest",
     "test:cov": "jest --coverage",
     "release": "standard-version --commit-all --no-verify && git push --follow-tags origin master"
