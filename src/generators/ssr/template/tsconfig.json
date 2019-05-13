@@ -1,0 +1,29 @@
+{
+  "compilerOptions": {
+    "strict": true,
+    "strictNullChecks": false,
+    "target": "esnext",
+    "module": "esnext",
+    "declaration": false,
+    "removeComments": false,
+    "moduleResolution": "node",
+    "experimentalDecorators": true,
+    "esModuleInterop": true,
+    "allowSyntheticDefaultImports": true,
+    "outDir": "lib",
+    "skipLibCheck": true,
+    "newLine": "LF",
+    "jsx": "preserve",
+    "allowJs": true,
+    "typeRoots": [
+      "node_modules/@types",
+      "global.d.ts"
+    ]
+  },
+  "exclude": [
+    "node_modules",
+    "lib",
+    "dist"
+  ],
+  "compileOnSave": false
+}
