@@ -1,7 +1,7 @@
 {
   "compilerOptions": {
     "strict": true,
-    "target": "esnext",
+    "target": "es5",
     "module": "commonjs",
     "declaration": true,
     "removeComments": false,
@@ -12,6 +12,7 @@
     "outDir": "lib",
     "skipLibCheck": true,
     "newLine": "LF",
+    "importHelpers": true,
     "typeRoots": [
       "node_modules/@types",
       "global.d.ts"
