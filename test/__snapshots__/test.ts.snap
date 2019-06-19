@@ -38,6 +38,23 @@ Array [
   ".editorconfig",
   ".gitattributes",
   ".gitignore",
+  ".travis.yml",
+  "LICENSE",
+  "README.md",
+  "bili.config.ts",
+  "package.json",
+  "src/index.ts",
+  "tests/test.ts",
+  "tsconfig.json",
+  "yarn.lock",
+]
+`;
+
+exports[`文件列表正确 4`] = `
+Array [
+  ".editorconfig",
+  ".gitattributes",
+  ".gitignore",
   "README.md",
   "config/dev.js",
   "config/index.js",
@@ -69,7 +86,34 @@ Array [
 ]
 `;
 
-exports[`文件列表正确 4`] = `
+exports[`文件列表正确 5`] = `
+Array [
+  ".editorconfig",
+  ".gitattributes",
+  ".gitignore",
+  "README.md",
+  "babel.config.js",
+  "global.d.ts",
+  "helpers/component.ts",
+  "helpers/index.ts",
+  "helpers/pageUrls.ts",
+  "next.config.js",
+  "package.json",
+  "pages/_app.tsx",
+  "pages/_document.tsx",
+  "pages/home/index.module.less",
+  "pages/home/index.tsx",
+  "pages/home/test.jsx",
+  "pages/index.tsx",
+  "static/images/test.svg",
+  "static/index.ts",
+  "static/styles/nprogress.css",
+  "tsconfig.json",
+  "yarn.lock",
+]
+`;
+
+exports[`文件列表正确 6`] = `
 Array [
   ".editorconfig",
   ".gitattributes",

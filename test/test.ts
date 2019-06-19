@@ -5,7 +5,9 @@ import sao from 'sao'
   // @index('../src/generators/*', (pp, cc) => `'${pp.name}',`)
   'basic',
   'generator',
+  'lib',
   'mp',
+  'ssr',
   'web',
   // @endindex
 ].forEach(generatorName => {
