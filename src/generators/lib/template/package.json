@@ -64,7 +64,7 @@
       "^.+\\.tsx?$": "ts-jest"
     },
     "collectCoverageFrom": [
-      "<rootDir>/src/**/*.{ts|tsx}"
+      "<rootDir>/src/**/*.ts"
     ],
     "testRegex": "(/__tests__/.*|(\\.|/)(test|spec))\\.(jsx?|tsx?)$",
     "moduleFileExtensions": [
