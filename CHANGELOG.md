@@ -2,6 +2,21 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+# [0.16.0](https://github.com/fjc0k/sao-io/compare/v0.15.1...v0.16.0) (2019-06-19)
+
+
+### Bug Fixes
+
+* 解决覆盖率收集来源有误的问题 ([f0be358](https://github.com/fjc0k/sao-io/commit/f0be358))
+
+
+### Features
+
+* **basic:** 优化模板 ([317a181](https://github.com/fjc0k/sao-io/commit/317a181))
+* **lib:** 完善模板 ([69c8b0f](https://github.com/fjc0k/sao-io/commit/69c8b0f))
+
+
+
 ## [0.15.1](https://github.com/fjc0k/sao-io/compare/v0.15.0...v0.15.1) (2019-05-13)
 
 
