@@ -4,7 +4,7 @@ import { isEmail, isUrl } from 'vtils'
 const config: GeneratorConfig<{
   name: string,
   description: string,
-  hasMITLicense: boolean,
+  hasCli: boolean,
   author: string,
   email: string,
   homePage: string,
@@ -21,6 +21,12 @@ const config: GeneratorConfig<{
         name: 'description',
         message: '项目描述',
         default: `A project.`,
+      },
+      {
+        name: 'hasCli',
+        message: '是否提供命令行',
+        type: 'confirm',
+        default: false,
       },
       {
         name: 'author',
@@ -60,6 +66,7 @@ const config: GeneratorConfig<{
           data: {
             name: string,
             description: string,
+            bin: Record<string, string>,
             author: Record<string, string>,
             homepage: string,
             repository: Record<'url', string>,
@@ -70,6 +77,13 @@ const config: GeneratorConfig<{
           const repoUrl = `${answers.homePage}/${answers.name}`.replace(/\/+/g, '/')
           data.name = answers.name
           data.description = answers.description
+          if (answers.hasCli) {
+            data.bin = {
+              [answers.name]: './cli.js',
+            }
+          } else {
+            delete data.bin
+          }
           data.author = {
             name: answers.author,
             email: answers.email,
@@ -90,6 +104,7 @@ const config: GeneratorConfig<{
     await this.npmInstall({
       packages: [
         'vtils',
+        'tslib',
       ],
     })
     await this.npmInstall({

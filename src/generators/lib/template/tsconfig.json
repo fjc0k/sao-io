@@ -1,7 +1,7 @@
 {
   "compilerOptions": {
     "strict": true,
-    "target": "esnext",
+    "target": "es5",
     "module": "commonjs",
     "declaration": true,
     "removeComments": false,
@@ -11,7 +11,8 @@
     "allowSyntheticDefaultImports": true,
     "outDir": "lib",
     "skipLibCheck": true,
-    "newLine": "LF"
+    "newLine": "LF",
+    "importHelpers": true
   },
   "include": [
     "src"
