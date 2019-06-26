@@ -1,5 +1,5 @@
 import React from 'react'
-import { castArray, mapValues, Omit, pick, Validator, ValidatorRule } from 'vtils'
+import { castArray, EasyValidator, EasyValidatorRules, EasyValidatorValidateReturn, isPlainObject, mapValues, Omit, pick, unique } from 'vtils'
 import { isFunction } from 'vtils'
 import { ListContainer } from './services'
 import { PageName, Pages, pageUrls } from './pages'
@@ -22,7 +22,7 @@ const component = <
     extraData?: (this: { props: PP, state: SS }) => Record<string, any>,
   }>,
   Params extends Record<string, any>,
-  Rules extends { [key in keyof S]?: ValidatorRule | ValidatorRule[] },
+  Rules extends EasyValidatorRules<S>,
   InjectStoreName extends StoreName = null,
   PP = (
     Overwrite<
@@ -80,7 +80,7 @@ const component = <
   > {
     static defaultProps: P = defaultProps
 
-    private __validator__ = new Validator(rules)
+    private __validator__ = new EasyValidator(rules)
 
     defaultParams: Params = {} as any
 
@@ -148,23 +148,19 @@ const component = <
       }
     }
 
-    validate = <K extends keyof S>(keys: K | K[] = Object.keys(rules) as any): Promise<void> => {
-      return new Promise((resolve, reject) => {
+    validate = <K extends keyof S>(keys: K | K[] | Partial<S> = unique(rules.map(rule => rule.key)) as any): Promise<EasyValidatorValidateReturn<S>> => {
+      return new Promise(resolve => {
         this.__validator__
           .validate(
             (
-              (keys as any).length === 0
-                ? this.state
-                : pick(this.state, castArray(keys) as any)
+              isPlainObject(keys)
+                ? keys
+                : (keys as any).length === 0
+                  ? this.state
+                  : pick(this.state, castArray(keys) as any)
             ) as any,
           )
-          .then(res => {
-            if (res.valid === true) {
-              resolve()
-            } else {
-              reject(res.message)
-            }
-          })
+          .then(resolve)
       })
     }
   }
