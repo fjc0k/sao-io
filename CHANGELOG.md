@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [0.16.1](https://github.com/fjc0k/sao-io/compare/v0.16.0...v0.16.1) (2019-06-26)
+
+
+### Bug Fixes
+
+* **web:** 资源使用 require ([82a20c9](https://github.com/fjc0k/sao-io/commit/82a20c9))
+* **web:** 适配新版 vtils ([834f1c4](https://github.com/fjc0k/sao-io/commit/834f1c4))
+
+
+
 # [0.16.0](https://github.com/fjc0k/sao-io/compare/v0.15.1...v0.16.0) (2019-06-19)
 
 
