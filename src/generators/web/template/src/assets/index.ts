@@ -1,1 +1,1 @@
-// @index('./*', (pp, cc) => `export { default as img${cc.upperCaseFirst(pp.name)} } from '${pp.path}${pp.ext}'`)
+// @index('./*', (pp, cc) => `export const img${cc.upperCaseFirst(pp.name)} = require('${pp.path}${pp.ext}')`)
