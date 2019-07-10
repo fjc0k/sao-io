@@ -2,6 +2,15 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [0.16.2](https://github.com/fjc0k/sao-io/compare/v0.16.1...v0.16.2) (2019-07-10)
+
+
+### Bug Fixes
+
+* **lib:** 去除 stlye-lint ([6188796](https://github.com/fjc0k/sao-io/commit/6188796))
+
+
+
 ## [0.16.1](https://github.com/fjc0k/sao-io/compare/v0.16.0...v0.16.1) (2019-06-26)
 
 
