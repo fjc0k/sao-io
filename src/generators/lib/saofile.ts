@@ -111,7 +111,6 @@ const config: GeneratorConfig<{
       packages: [
         'commitlint-config-io',
         'eslint-config-io',
-        'stylelint-config-io',
         'typescript',
       ],
       saveDev: true,
